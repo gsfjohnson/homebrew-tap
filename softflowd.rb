@@ -13,6 +13,7 @@ class Softflowd < Formula
     system "aclocal"
     system "touch", "config.h.in"
     system "rm", "COPYING"
+    system "touch", "COPYING"
     system "automake", "--add-missing"
     system "autoreconf"
     system "./configure", "--disable-debug",
@@ -20,8 +21,8 @@ class Softflowd < Formula
                           "--disable-silent-rules",
                           "--prefix=#{prefix}"
     system "make", "install"
-    #bin.install "softflowd"
-    #bin.install "softflowctl"
+    bin.install "softflowd"
+    bin.install "softflowctl"
   end
 
   test do
