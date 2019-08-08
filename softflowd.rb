@@ -11,6 +11,7 @@ class Softflowd < Formula
   def install
     # install softflowd and softflowctl, create symlink to script in /usr/local/bin
     system "aclocal"
+    system "touch", "config.h.in"
     system "automake", "--add-missing"
     system "autoreconf"
     system "./configure", "--disable-debug",
