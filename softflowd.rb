@@ -1,5 +1,5 @@
 class Softflowd < Formula
-  desc "flow-based network traffic analyser capable of Cisco NetFlow data export software"
+  desc "flow-based network traffic analyser capable of Cisco NetFlow data export"
   homepage "https://github.com/irino/softflowd"
   url "https://github.com/irino/softflowd/archive/9925c0e78ea8f746a70afc5185147f1519ad47b8.tar.gz"
   sha256 "ebfa948853a2825e4ab1a1f165da52280cbaa5eb1841aa15cfcd60f7861995fa"
@@ -27,5 +27,6 @@ class Softflowd < Formula
 
   test do
     system "#{bin}/softflowd", "-h"
+    system "#{bin}/softflowctl", "-h"
   end
 end
